@@ -12,7 +12,6 @@ class ValueIteration:
             self.values[state] = 0.0
 
     def run_value_iteration(self):
-        """Runs the value iteration algorithm for the given number of iterations."""
         for i in range(self.iterations):
             new_values = {}
             for state in self.mdp.get_states():
@@ -26,11 +25,9 @@ class ValueIteration:
             self.values = new_values
 
     def get_value(self, state):
-        """Returns the value of a state."""
         return self.values.get(state, 0.0)
 
     def compute_qvalue_from_values(self, state, action) -> float:
-        """Computes the Q-value of a state-action pair from current values."""
         q_value = 0.0
         for next_state, prob in self.mdp.get_transition_states_and_probs(state, action):
             reward = self.mdp.get_reward(state, action, next_state)
@@ -38,7 +35,6 @@ class ValueIteration:
         return q_value
 
     def compute_action_from_values(self, state):
-        """Returns the best action for a state based on computed values."""
         actions = self.mdp.get_possible_actions(state)
         if not actions:
             return None
@@ -53,15 +49,12 @@ class ValueIteration:
         return best_action
 
     def get_action(self, state):
-        """Returns the policy action for a state (no exploration)."""
         return self.compute_action_from_values(state)
 
     def get_qvalue(self, state, action):
-        """Returns the Q-value for a state-action pair."""
         return self.compute_qvalue_from_values(state, action)
 
     def get_policy(self, state):
-        """Returns the action for a state, or None if no actions available."""
         if self.mdp.is_terminal(state):
             return None
         return self.compute_action_from_values(state)
@@ -70,7 +63,7 @@ class ValueIteration:
 if __name__ == "__main__":
     from bridge_environment import BridgeEnvironment
 
-    # Choose environment: "GRIDWORLD" or "BRIDGE"
+    # "GRIDWORLD" or "BRIDGE"
     ENVIRONMENT = "BRIDGE"  
 
     logger.add("value_iteration.log", rotation="500 MB", level="DEBUG")
@@ -100,7 +93,6 @@ if __name__ == "__main__":
             vi = ValueIteration(mdp, discount=discount, iterations=n_iter)
             vi.run_value_iteration()
 
-            # Log values grid
             logger.info(f"--- Valores (iteraciones={n_iter}, discount={discount}) ---")
             for r in range(env.nrows):
                 row = ''
@@ -111,7 +103,6 @@ if __name__ == "__main__":
                         row += f'{vi.get_value((r, c)):+7.3f} '
                 logger.info(row)
 
-            # Log policy grid
             logger.info(f"--- Politica (iteraciones={n_iter}, discount={discount}) ---")
             for r in range(env.nrows):
                 row = ''
