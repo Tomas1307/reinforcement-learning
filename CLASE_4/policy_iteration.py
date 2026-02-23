@@ -129,7 +129,6 @@ if __name__ == "__main__":
             pi = PolicyIteration(mdp, discount=discount, iterations=n_iter)
             pi.run_policy_iteration()
 
-            # Log values grid
             logger.info(f"--- Valores (iteraciones={n_iter}, discount={discount}) ---")
             for r in range(env.nrows):
                 row = ''
@@ -140,7 +139,6 @@ if __name__ == "__main__":
                         row += f'{pi.get_value((r, c)):+7.3f} '
                 logger.info(row)
 
-            # Log policy grid
             logger.info(f"--- Politica (iteraciones={n_iter}, discount={discount}) ---")
             for r in range(env.nrows):
                 row = ''
