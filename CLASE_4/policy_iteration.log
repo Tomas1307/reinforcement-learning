@@ -1,0 +1,54 @@
+2026-02-24 07:42:23.979 | INFO     | __main__:<module>:122 - 
+============================================================
+2026-02-24 07:42:23.979 | INFO     | __main__:<module>:123 - ENVIRONMENT: BRIDGE, DISCOUNT: 0.9
+2026-02-24 07:42:23.980 | INFO     | __main__:<module>:124 - ============================================================
+
+2026-02-24 07:42:23.980 | INFO     | __main__:<module>:127 - === Policy Iteration con 5 iteraciones ===
+2026-02-24 07:42:23.983 | INFO     | __main__:<module>:132 - --- Valores (iteraciones=5, discount=0.9) ---
+2026-02-24 07:42:23.984 | INFO     | __main__:<module>:140 -  -2.841  +0.000  +0.000  +0.000  +0.000  +0.000 +71.397 
+2026-02-24 07:42:23.984 | INFO     | __main__:<module>:140 -  -2.841 -34.861 -53.792 -40.921 -13.404 +32.967  +0.000 
+2026-02-24 07:42:23.984 | INFO     | __main__:<module>:140 -  -2.840  +0.000  +0.000  +0.000  +0.000  +0.000 +68.493 
+2026-02-24 07:42:23.985 | INFO     | __main__:<module>:142 - --- Politica (iteraciones=5, discount=0.9) ---
+2026-02-24 07:42:23.985 | INFO     | __main__:<module>:151 -  LEFT  EXIT  EXIT  EXIT  EXIT  EXIT RIGHT 
+2026-02-24 07:42:23.985 | INFO     | __main__:<module>:151 -  LEFT  LEFT  LEFT RIGHT RIGHT RIGHT  EXIT 
+2026-02-24 07:42:23.985 | INFO     | __main__:<module>:151 -  LEFT  EXIT  EXIT  EXIT  EXIT  EXIT   UP  
+2026-02-24 07:42:23.985 | SUCCESS  | __main__:<module>:153 - Policy Iteration con 5 iteraciones completado
+
+2026-02-24 07:42:23.985 | INFO     | __main__:<module>:127 - === Policy Iteration con 10 iteraciones ===
+2026-02-24 07:42:23.989 | INFO     | __main__:<module>:132 - --- Valores (iteraciones=10, discount=0.9) ---
+2026-02-24 07:42:23.989 | INFO     | __main__:<module>:140 -  -2.841  +0.000  +0.000  +0.000  +0.000  +0.000 +71.397 
+2026-02-24 07:42:23.989 | INFO     | __main__:<module>:140 -  -2.841 -34.861 -53.792 -40.921 -13.404 +32.967  +0.000 
+2026-02-24 07:42:23.990 | INFO     | __main__:<module>:140 -  -2.840  +0.000  +0.000  +0.000  +0.000  +0.000 +68.493 
+2026-02-24 07:42:23.990 | INFO     | __main__:<module>:142 - --- Politica (iteraciones=10, discount=0.9) ---
+2026-02-24 07:42:23.990 | INFO     | __main__:<module>:151 -  LEFT  EXIT  EXIT  EXIT  EXIT  EXIT RIGHT 
+2026-02-24 07:42:23.990 | INFO     | __main__:<module>:151 -  LEFT  LEFT  LEFT RIGHT RIGHT RIGHT  EXIT 
+2026-02-24 07:42:23.990 | INFO     | __main__:<module>:151 -  LEFT  EXIT  EXIT  EXIT  EXIT  EXIT   UP  
+2026-02-24 07:42:23.990 | SUCCESS  | __main__:<module>:153 - Policy Iteration con 10 iteraciones completado
+
+2026-02-24 07:42:23.990 | INFO     | __main__:<module>:122 - 
+============================================================
+2026-02-24 07:42:23.991 | INFO     | __main__:<module>:123 - ENVIRONMENT: BRIDGE, DISCOUNT: 0.1
+2026-02-24 07:42:23.991 | INFO     | __main__:<module>:124 - ============================================================
+
+2026-02-24 07:42:23.991 | INFO     | __main__:<module>:127 - === Policy Iteration con 5 iteraciones ===
+2026-02-24 07:42:23.993 | INFO     | __main__:<module>:132 - --- Valores (iteraciones=5, discount=0.1) ---
+2026-02-24 07:42:23.994 | INFO     | __main__:<module>:140 -  -0.000  +0.000  +0.000  +0.000  +0.000  +0.000 +40.816 
+2026-02-24 07:42:23.994 | INFO     | __main__:<module>:140 -  -0.000 -30.303 -32.140 -32.028 -28.466 +30.303  +0.000 
+2026-02-24 07:42:23.995 | INFO     | __main__:<module>:140 -  -0.000  +0.000  +0.000  +0.000  +0.000  +0.000 +51.546 
+2026-02-24 07:42:23.995 | INFO     | __main__:<module>:142 - --- Politica (iteraciones=5, discount=0.1) ---
+2026-02-24 07:42:23.995 | INFO     | __main__:<module>:151 -  LEFT  EXIT  EXIT  EXIT  EXIT  EXIT  DOWN 
+2026-02-24 07:42:23.995 | INFO     | __main__:<module>:151 -  LEFT  LEFT  LEFT RIGHT RIGHT RIGHT  EXIT 
+2026-02-24 07:42:23.996 | INFO     | __main__:<module>:151 -  LEFT  EXIT  EXIT  EXIT  EXIT  EXIT   UP  
+2026-02-24 07:42:23.996 | SUCCESS  | __main__:<module>:153 - Policy Iteration con 5 iteraciones completado
+
+2026-02-24 07:42:23.996 | INFO     | __main__:<module>:127 - === Policy Iteration con 10 iteraciones ===
+2026-02-24 07:42:23.999 | INFO     | __main__:<module>:132 - --- Valores (iteraciones=10, discount=0.1) ---
+2026-02-24 07:42:23.999 | INFO     | __main__:<module>:140 -  -0.000  +0.000  +0.000  +0.000  +0.000  +0.000 +40.816 
+2026-02-24 07:42:24.000 | INFO     | __main__:<module>:140 -  -0.000 -30.303 -32.140 -32.028 -28.466 +30.303  +0.000 
+2026-02-24 07:42:24.000 | INFO     | __main__:<module>:140 -  -0.000  +0.000  +0.000  +0.000  +0.000  +0.000 +51.546 
+2026-02-24 07:42:24.001 | INFO     | __main__:<module>:142 - --- Politica (iteraciones=10, discount=0.1) ---
+2026-02-24 07:42:24.001 | INFO     | __main__:<module>:151 -  LEFT  EXIT  EXIT  EXIT  EXIT  EXIT  DOWN 
+2026-02-24 07:42:24.001 | INFO     | __main__:<module>:151 -  LEFT  LEFT  LEFT RIGHT RIGHT RIGHT  EXIT 
+2026-02-24 07:42:24.002 | INFO     | __main__:<module>:151 -  LEFT  EXIT  EXIT  EXIT  EXIT  EXIT   UP  
+2026-02-24 07:42:24.002 | SUCCESS  | __main__:<module>:153 - Policy Iteration con 10 iteraciones completado
+
