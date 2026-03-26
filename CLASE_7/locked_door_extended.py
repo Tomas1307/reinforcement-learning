@@ -22,16 +22,13 @@ class LockedDoorExtended:
 
         self.agent_start = agent_start or (2, 0)
         self.key_pos = key_pos or (1, 3)
-        self.ball_pos = ball_pos or (3, 2)
+        self.ball_pos = ball_pos or (3, 3)
         self.goal_pos = goal_pos or (0, 6)
 
         self.randomize_start = randomize_start
-        # Possible key positions for randomization
         self.key_positions = key_positions or [(r, c) for r in range(nrows) for c in range(wall_col)]
-        # Possible start positions
         self.start_positions = [(r, c) for r in range(nrows) for c in range(wall_col)]
 
-        # State: (row, col, has_ball, has_key, door_open, key_row, key_col)
         self.current_state = (
             self.agent_start[0], self.agent_start[1],
             False, False, False,

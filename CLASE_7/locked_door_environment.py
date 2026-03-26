@@ -39,13 +39,11 @@ class LockedDoorEnv:
         self.key_color = key_color
         self.door_color = 'blue'
 
-        # Default positions matching the locked-door image
         self.agent_start = agent_start or (2, 0)
         self.key_pos = key_pos or (1, 3)
-        self.ball_pos = ball_pos or (3, 2)  # near the door
+        self.ball_pos = ball_pos or (3, 3)  
         self.goal_pos = goal_pos or (0, 6)
 
-        # State: (row, col, has_ball, has_key, door_open)
         self.current_state = (self.agent_start[0], self.agent_start[1], False, False, False)
 
         # Actions
@@ -70,10 +68,8 @@ class LockedDoorEnv:
         """Check if position is a wall."""
         if r < 0 or r >= self.nrows or c < 0 or c >= self.ncols:
             return True
-        # Wall column (except door)
         if c == self.wall_col:
             if r == self.door_row:
-                # Door: only passable if open
                 _, _, _, _, door_open = self.current_state
                 return not door_open
             return True
@@ -87,37 +83,30 @@ class LockedDoorEnv:
             dr, dc = self.action_map[action]
             new_r, new_c = r + dr, c + dc
 
-            # Check bounds and walls
             if self._is_wall(new_r, new_c):
                 self.current_state = (r, c, has_ball, has_key, door_open)
                 return -1, self.current_state
 
             self.current_state = (new_r, new_c, has_ball, has_key, door_open)
 
-            # Check if reached goal
             if (new_r, new_c) == self.goal_pos:
                 return 100, self.current_state
 
             return -1, self.current_state
 
         elif action == 'pick_up':
-            # Try to pick up ball
             if not has_ball and (r, c) == self.ball_pos:
                 self.current_state = (r, c, True, has_key, door_open)
                 return 10, self.current_state
 
-            # Try to pick up key
             if not has_key and (r, c) == self.key_pos:
-                # Key must match door color
                 if self.key_color == self.door_color:
                     self.current_state = (r, c, has_ball, True, door_open)
                     return 10, self.current_state
 
-            # Invalid pick up
             return -1, self.current_state
 
         elif action == 'open_door':
-            # Must be adjacent to door, have ball removed, and have key
             is_adjacent = (
                 (r == self.door_row and c == self.wall_col - 1) or
                 (r == self.door_row and c == self.wall_col + 1)
@@ -143,7 +132,6 @@ class LockedDoorEnv:
         states = []
         for r in range(self.nrows):
             for c in range(self.ncols):
-                # Skip wall positions (except door when open)
                 if c == self.wall_col and r != self.door_row:
                     continue
                 for has_ball in [False, True]:
