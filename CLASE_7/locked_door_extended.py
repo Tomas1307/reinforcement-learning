@@ -10,7 +10,7 @@ class LockedDoorExtended:
     This allows the agent to generalize across different key positions.
     """
 
-    def __init__(self, nrows=5, ncols=11, wall_col=5, door_row=2,
+    def __init__(self, nrows=4, ncols=9, wall_col=4, door_row=3,
                  agent_start=None, key_pos=None, ball_pos=None, goal_pos=None,
                  key_color='blue', key_positions=None, randomize_start=False):
         self.nrows = nrows
@@ -20,10 +20,10 @@ class LockedDoorExtended:
         self.key_color = key_color
         self.door_color = 'blue'
 
-        self.agent_start = agent_start or (0, 0)
-        self.key_pos = key_pos or (4, 3)
-        self.ball_pos = ball_pos or (2, 4)
-        self.goal_pos = goal_pos or (4, 10)
+        self.agent_start = agent_start or (2, 0)
+        self.key_pos = key_pos or (1, 3)
+        self.ball_pos = ball_pos or (3, 2)
+        self.goal_pos = goal_pos or (0, 6)
 
         self.randomize_start = randomize_start
         # Possible key positions for randomization

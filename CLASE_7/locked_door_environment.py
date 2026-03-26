@@ -15,13 +15,12 @@ class LockedDoorEnv:
     State: (row, col, has_ball, has_key, door_open)
 
     Grid layout (default):
-        Left room (cols 0-4), Wall at col 5 with door at row 2, Right room (cols 6-10)
+        Left room (cols 0-3), Wall at col 4 with door at row 3, Right room (cols 5-8)
 
-        . . . . . | . . . . .
-        . . . . . | . . . . .
-        . . . . . D . . . . .
-        . . . . . | . . . . .
-        . . . . . | . . . . .
+        . . . . | . G . .
+        . . . K | . . . .
+        A . . . | . . . .
+        . . B . D . . . .
 
     A = Agent start (random or fixed)
     K = Key (blue)
@@ -30,7 +29,7 @@ class LockedDoorEnv:
     G = Goal (in right room)
     """
 
-    def __init__(self, nrows=5, ncols=11, wall_col=5, door_row=2,
+    def __init__(self, nrows=4, ncols=9, wall_col=4, door_row=3,
                  agent_start=None, key_pos=None, ball_pos=None, goal_pos=None,
                  key_color='blue'):
         self.nrows = nrows
@@ -40,11 +39,11 @@ class LockedDoorEnv:
         self.key_color = key_color
         self.door_color = 'blue'
 
-        # Default positions (all in left room)
-        self.agent_start = agent_start or (0, 0)
-        self.key_pos = key_pos or (4, 3)
-        self.ball_pos = ball_pos or (2, 4)  # next to door
-        self.goal_pos = goal_pos or (4, 10)
+        # Default positions matching the locked-door image
+        self.agent_start = agent_start or (2, 0)
+        self.key_pos = key_pos or (1, 3)
+        self.ball_pos = ball_pos or (3, 2)  # near the door
+        self.goal_pos = goal_pos or (0, 6)
 
         # State: (row, col, has_ball, has_key, door_open)
         self.current_state = (self.agent_start[0], self.agent_start[1], False, False, False)
